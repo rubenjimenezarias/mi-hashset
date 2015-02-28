@@ -8,7 +8,7 @@
 public class MiHashSet
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int[] conjunto;
 
     /**
      * Constructor for objects of class MiHashSet
@@ -16,18 +16,41 @@ public class MiHashSet
     public MiHashSet()
     {
         // initialise instance variables
-        x = 0;
+        conjunto = new int[0];
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * introduce el valor int a la lista y devuelve true o false segun si estaba o no el valor en la lista
+     * @valor valor que queremos introducir
      */
-    public int sampleMethod(int y)
+    public boolean add(int valor)
     {
-        // put your code here
-        return x + y;
+        boolean noEsta = true;
+        //COMPROBAMOS SI ESTA O NO EL VALOR EN LA LISTA
+        int cont = 0;
+        while(cont < conjunto.length)
+        {
+            if (conjunto[cont] == valor)
+            {
+                noEsta = false;
+            }
+            cont++;
+        }
+       
+        // SI EL VALOR NO ESTA LO AÑADIMOS
+        if(noEsta)
+        {
+            // hacemos la copia de la lista que ya teniamos en la copia
+            int[] copia = new int[conjunto.length + 1];
+            for(cont = 0 ;cont < conjunto.length; cont++)
+            {
+                copia[cont]=conjunto[cont];
+            }
+            // añadimos el valor introducido por el usuario a la nueva lista.
+            copia[cont]=valor;
+            // copiamos la lista copia a la original con el valor nuevo añadido.
+            conjunto = copia;
+        }
+        return noEsta;
     }
 }
