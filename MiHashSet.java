@@ -155,4 +155,29 @@ public class MiHashSet
         }
         return todo;
     }
+    
+    /**
+     * Devuelve true o false dependiendo si el conjunto es igual al que tenemos
+     */
+    public boolean equals(MiHashSet otroConjunto)
+    {
+        boolean igual = true;
+        int cont = 0;
+        if (conjunto.length == otroConjunto.size())
+        {
+            while (cont < conjunto.length && igual)
+            {
+                if (!otroConjunto.contains(conjunto[cont]))
+                {
+                    igual = false;
+                }
+                cont++;
+            }
+        }
+        else
+        {
+            igual = false;
+        }
+        return igual;
+    }
 }
