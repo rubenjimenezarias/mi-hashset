@@ -53,4 +53,11 @@ public class MiHashSet
         }
         return noEsta;
     }
+    /**
+     * Vacia la lista
+     */
+    public void clear()
+    {
+        conjunto = new int[0];
+    }
 }
