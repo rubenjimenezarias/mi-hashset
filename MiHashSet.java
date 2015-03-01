@@ -135,4 +135,24 @@ public class MiHashSet
     {
         return conjunto.length;
     }
+    
+    /**
+     * devuelve una cadena conteniendo todos los elementos del conjunto separados por comas y entre corchetes
+     */
+    public String toString()
+    {
+        String todo = "[";
+        for (int cont = 0; cont < conjunto.length; cont++)
+        {
+            if (cont != conjunto.length-1)
+            {
+                todo += conjunto[cont] + ",";
+            }
+            else
+            {
+                todo += conjunto[cont] + "]";
+            }
+        }
+        return todo;
+    }
 }
