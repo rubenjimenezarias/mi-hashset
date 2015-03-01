@@ -60,4 +60,22 @@ public class MiHashSet
     {
         conjunto = new int[0];
     }
+    /**
+     * devuelve true o false segun si la lista contiene un elemento o no.
+     */
+    public boolean contains(int elemento)
+    {
+        boolean contiene = false;
+        //COMPROBAMOS SI ESTA O NO EL VALOR EN LA LISTA
+        int cont = 0;
+        while(cont < conjunto.length)
+        {
+            if (conjunto[cont] == elemento)
+            {
+                contiene = true;
+            }
+            cont++;
+        }
+        return contiene;
+    }
 }
