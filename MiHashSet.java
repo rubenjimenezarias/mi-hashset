@@ -28,7 +28,7 @@ public class MiHashSet
         boolean noEsta = true;
         //COMPROBAMOS SI ESTA O NO EL VALOR EN LA LISTA
         int cont = 0;
-        while(cont < conjunto.length)
+        while(cont < conjunto.length && noEsta)
         {
             if (conjunto[cont] == valor)
             {
@@ -70,7 +70,7 @@ public class MiHashSet
         boolean contiene = false;
         //COMPROBAMOS SI ESTA O NO EL VALOR EN LA LISTA
         int cont = 0;
-        while(cont < conjunto.length)
+        while(cont < conjunto.length && !contiene)
         {
             if (conjunto[cont] == elemento)
             {
@@ -98,7 +98,7 @@ public class MiHashSet
         //COMPROBAMOS SI ESTA O NO EL VALOR EN LA LISTA
         int cont = 0;
         int posicion = 0;
-        while(cont < conjunto.length)
+        while(cont < conjunto.length && !contiene)
         {
             if (conjunto[cont] == elemento)
             {
