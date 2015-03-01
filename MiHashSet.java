@@ -128,4 +128,11 @@ public class MiHashSet
         return contiene;
     }
     
+    /**
+     * Devuelve un entero que es el numero de elementos del conjunto
+     */
+    public int size()
+    {
+        return conjunto.length;
+    }
 }
