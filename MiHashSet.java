@@ -53,6 +53,7 @@ public class MiHashSet
         }
         return noEsta;
     }
+    
     /**
      * Vacia la lista
      */
@@ -60,6 +61,7 @@ public class MiHashSet
     {
         conjunto = new int[0];
     }
+    
     /**
      * devuelve true o false segun si la lista contiene un elemento o no.
      */
@@ -78,6 +80,7 @@ public class MiHashSet
         }
         return contiene;
     }
+    
     /**
      * devuelve true o false segun si la lista esta vacia o llena.
      */
@@ -85,4 +88,44 @@ public class MiHashSet
     {
         return (conjunto.length == 0);
     }
+    
+    /**
+     * Elimina un elemento y devuelve trueo false segun si esta el elemento en la lista
+     */
+    public boolean remove(int elemento)
+    {
+        boolean contiene = false;
+        //COMPROBAMOS SI ESTA O NO EL VALOR EN LA LISTA
+        int cont = 0;
+        int posicion = 0;
+        while(cont < conjunto.length)
+        {
+            if (conjunto[cont] == elemento)
+            {
+                posicion = cont;
+                contiene = true;
+            }
+            cont++;
+        }
+       
+        // SI EL VALOR NO ESTA LO AÑADIMOS
+        if(contiene)
+        {
+            // hacemos la copia de la lista que ya teniamos en la copia hasta el valor que tenemos que eliminar
+            int[] copia = new int[conjunto.length - 1];
+            for(cont = 0 ;cont < posicion; cont++)
+            {
+                copia[cont]=conjunto[cont];
+            }
+            // seguimos haciendo la copia del resto de numeros saltandonos el que queremos eliminar
+            for(cont = posicion; cont < copia.length; cont++)
+            {
+                copia[cont]=conjunto[cont+1];
+            }
+            // copiamos la lista copia a la original con el valor nuevo añadido.
+            conjunto = copia;
+        }
+        return contiene;
+    }
+    
 }
