@@ -78,4 +78,11 @@ public class MiHashSet
         }
         return contiene;
     }
+    /**
+     * devuelve true o false segun si la lista esta vacia o llena.
+     */
+    public boolean isEmpty()
+    {
+        return (conjunto.length == 0);
+    }
 }
